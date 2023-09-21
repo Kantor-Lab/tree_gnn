@@ -40,7 +40,7 @@
   </div>
 </nav>
 
-
+<!-- Title  block for author -->
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -56,7 +56,7 @@
               <a href="https://www.ri.cmu.edu/ri-faculty/oliver-kroemer/">Oliver Kroemer</a></sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.ri.cmu.edu/ri-faculty/george-a-kantor/"> George Kantor</a></sup>,
+              <a href="https://www.ri.cmu.edu/ri-faculty/george-a-kantor/"> George Kantor</a></sup>
             </span>
             
           </div>
@@ -72,6 +72,7 @@
   </div>
 </section>
 
+<!-- Motivation image -->
 <section class="hero teaser"> 
   <div class="container is-max-desktop">
     <div class="hero-body">
@@ -95,7 +96,7 @@
         <div class="column">
           <div class="dataset">
             <video poster="" id="dataset" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/tree_sim.mp4" type="video/mp4">
+              <source src="./static/videos/trimmed_dataset.mp4" type="video/mp4">
             </video>
             <h2 class="subtitle has-text-centered">
               <span class="dnerf"> Dataset collection process of the tree deformation in Issac Gym. 
@@ -105,7 +106,7 @@
         <div class="column">
           <div class="contact-policy">
             <video poster="" id="contact-policy" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/tree_sim.mp4" type="video/mp4">
+              <source src="./static/videos/trimmed_contact.mp4" type="video/mp4">
             </video>
             <h2 class="subtitle has-text-centered">
               <span class="dnerf"> Robot executing the learnt contact policy to move the tree into a target state. 
@@ -160,9 +161,8 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe width="873" height="491" src="https://www.youtube.com/embed/UjifgONHdQk" title="Predicting Branch Deformations from Robot Interactions Using Graph Neural Networks" 
+          <iframe width="1280" height="720" src="https://www.youtube.com/embed/29w2X-rUfaM" title="Towards Robotic Tree Manipulation: Leveraging Graph Representations" 
           frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          
         </div>
       </div>
     </div>
@@ -217,6 +217,130 @@
 
   </div>
 </section>
+
+
+
+
+
+
+<!-- Additional Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+      <!-- Results for FWD model  -->
+      <div class="content">
+        <h2 class="title is-3">Forward Model</h2>
+        <p>
+          Our GNN model architecture utilizes stackable graph2graph layers, placed between input embedding layers and output prediction heads. The
+          model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+        </p>
+
+          <div class="columns">
+            <div class="column">
+              <div class="dataset">
+                <video poster="" id="dataset" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/single_tree.mp4" type="video/mp4">
+                </video>
+                
+              </div>
+              <p>
+                Our GNN model architecture utilizes stackable graph2graph layers, placed between input embedding layers and output prediction heads. The
+                model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+              </p>
+              
+            </div>
+            <div class="column">
+              <div class="contact-policy">
+                <video poster="" id="contact-policy" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/multi_tree.mp4" type="video/mp4">
+                </video>
+                <p>
+                  Our GNN model architecture utilizes stackable graph2graph layers, placed between input embedding layers and output prediction heads. The
+                  model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+                </p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  </div>
+</section>
+
+
+<!-- Additional Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+      <!-- Results for FWD model  -->
+      <div class="content">
+        <h2 class="title is-3">Contact Policy</h2>
+        <p>
+          Our GNN model architecture utilizes stackable graph2graph layers, placed between input embedding layers and output prediction heads. The
+          model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+        </p>
+
+          <div class="columns">
+            <div class="column">
+              <div class="dataset">
+                <video poster="" id="dataset" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/robot_policy_new.mp4" type="video/mp4">
+                </video>
+                
+              </div>
+              <p>
+                Our GNN model architecture utilizes stackable graph2graph layers, placed between input embedding layers and output prediction heads. The
+                model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+              </p>
+              
+            </div>
+            <div class="column">
+              <div class="contact-policy">
+                <video poster="" id="contact-policy" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/robot_policy_multi.mp4" type="video/mp4">
+                </video>
+                <p>
+                  Our GNN model architecture utilizes stackable graph2graph layers, placed between input embedding layers and output prediction heads. The
+                  model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+                </p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <div class="dataset">
+            <video poster="" id="dataset" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/trimmed_dataset.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <span class="dnerf"> Dataset collection process of the tree deformation in Issac Gym. 
+            </h2>
+          </div>
+        </div>
+        <div class="column">
+          <div class="contact-policy">
+            <video poster="" id="contact-policy" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/trimmed_contact.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <span class="dnerf"> Robot executing the learnt contact policy to move the tree into a target state. 
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
 
 
 <footer class="footer">
