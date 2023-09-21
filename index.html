@@ -65,6 +65,58 @@
             <span class="author-block">Carnegie Mellon University</span>
           </div>
 
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://kantor-lab.github.io/tree_gnn/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://kantor-lab.github.io/tree_gnn/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/29w2X-rUfaM"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/chjohnkim/tree_is_all_you_need"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://labs.ri.cmu.edu/kantorlab/data-sets/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
           
         </div>
       </div>
@@ -230,8 +282,7 @@
       <div class="content">
         <h2 class="title is-3">Forward Model</h2>
         <p>
-          Our GNN model architecture utilizes stackable graph2graph layers, placed between input embedding layers and output prediction heads. The
-          model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+          The forward model problem involves predicting the tree’s future state, based on its initial state and the actions performed by the end-effector.
         </p>
 
           <div class="columns">
@@ -243,8 +294,7 @@
                 
               </div>
               <p>
-                Our GNN model architecture utilizes stackable graph2graph layers, placed between input embedding layers and output prediction heads. The
-                model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+                Initial tree (brown), contact node and trajectory (pink), predicted tree deformation (red), ground-truth tree deformation (green).
               </p>
               
             </div>
@@ -254,8 +304,7 @@
                   <source src="./static/videos/multi_tree.mp4" type="video/mp4">
                 </video>
                 <p>
-                  Our GNN model architecture utilizes stackable graph2graph layers, placed between input embedding layers and output prediction heads. The
-                  model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+                  The forward model shown on varying tree structures and sizes. The forward model can generalize zero-shot to unseen tree sizes outside the training set.
                 </p>
                 
               </div>
@@ -275,8 +324,7 @@
       <div class="content">
         <h2 class="title is-3">Contact Policy</h2>
         <p>
-          Our GNN model architecture utilizes stackable graph2graph layers, placed between input embedding layers and output prediction heads. The
-          model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+          Given an initial state and target state of a tree, the contact policy outputs a set of candidate actions represented as pernode trajectories and affordance scores.
         </p>
 
           <div class="columns">
@@ -288,8 +336,8 @@
                 
               </div>
               <p>
-                Our GNN model architecture utilizes stackable graph2graph layers, placed between input embedding layers and output prediction heads. The
-                model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+                Initial tree state (brown) and the desired target tree state (green). 
+                Given a set of candidate actions, we check feasibility and select the best action by iteratively applying RRT* to each candiate.  
               </p>
               
             </div>
@@ -299,8 +347,7 @@
                   <source src="./static/videos/robot_policy_multi.mp4" type="video/mp4">
                 </video>
                 <p>
-                  Our GNN model architecture utilizes stackable graph2graph layers, placed between input embedding layers and output prediction heads. The
-                  model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+                  The contact policy used to manipulate the tree to a desired target state. The contact policy is shown on varying tree structures and sizes. 
                 </p>
                 
               </div>
