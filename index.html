@@ -68,6 +68,7 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
+              <!--
               <span class="link-block">
                 <a href="https://kantor-lab.github.io/tree_gnn/"
                    class="external-link button is-normal is-rounded is-dark">
@@ -77,13 +78,14 @@
                   <span>Paper</span>
                 </a>
               </span>
+              -->
               <span class="link-block">
                 <a href="https://kantor-lab.github.io/tree_gnn/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>arXiv (Coming Soon)</span>
                 </a>
               </span>
               <!-- Video Link. -->
@@ -103,10 +105,11 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (Coming Soon)</span>
                   </a>
               </span>
               <!-- Dataset Link. -->
+              <!--
               <span class="link-block">
                 <a href="https://labs.ri.cmu.edu/kantorlab/data-sets/"
                    class="external-link button is-normal is-rounded is-dark">
@@ -115,6 +118,7 @@
                   </span>
                   <span>Data</span>
                   </a>
+              -->
             </div>
 
           
@@ -151,7 +155,7 @@
               <source src="./static/videos/trimmed_dataset.mp4" type="video/mp4">
             </video>
             <h2 class="subtitle has-text-centered">
-              <span class="dnerf"> Dataset collection process of the tree deformation in Issac Gym. 
+              <span class="dnerf"> Dataset collection process of tree deformation in Issac Gym. 
             </h2>
           </div>
         </div>
@@ -161,7 +165,7 @@
               <source src="./static/videos/trimmed_contact.mp4" type="video/mp4">
             </video>
             <h2 class="subtitle has-text-centered">
-              <span class="dnerf"> Robot executing the learnt contact policy to move the tree into a target state. 
+              <span class="dnerf"> Robot executing a learnt contact policy to manipulate trees to the target state. 
             </h2>
           </div>
         </div>
@@ -231,18 +235,20 @@
         <div class="content">
           <h2 class="title is-3">Graph Representation for Trees</h2>
           <p>
-            Tree branches can be represented as graphs to train the forward model and the contact policy. 
-            Given an initial tree state and an applied action, the forward model predicts how the resulting tree has deformed by outputting per node differences. 
+            Tree structures can be represented as graphs to train the forward model and the contact policy. 
+          </p>
+          <p>
+            <strong>Forward Model:</strong> Given an initial tree state and an applied action, the forward model predicts how the resulting tree has deformed by outputting per node differences. 
           </p>
 
           <p>
-            The representation can also be trained to learn the contact policy.
-            Given an initial tree state and target tree state, the contact policy predicts where and how to interact with the tree by outputting per node trajectory and per node affordance. 
+            <strong>Contact Policy:</strong> Given an initial tree state and target tree state, the contact policy predicts where and how to interact with the tree by outputting per node trajectory and per node affordance. 
           </p>
-          
-          <img src="./static/images/fig_input_output_v3.jpg"
-         class="interpolation-image"
-         alt="Interpolate start reference image."/>
+          <div style="text-align: center;">
+            <img src="./static/images/input_output.jpg" width="500"
+               class="interpolation-image"
+               alt="GNN Input Output"/>
+          </div>
          
         </div>
       <!--/ Graph Representation  -->
@@ -253,14 +259,14 @@
         <div class="content">
           <h2 class="title is-3">Graph Neural Network Architecture</h2>
           <p>
-            Our GNN model architecture utilizes stackable graph2graph layers, placed between input embedding layers and output prediction heads. The
+            Our GNN model architecture utilizes stackable <a href="https://arxiv.org/abs/1806.01242">graph2graph</a> layers, placed between input embedding layers and output prediction heads. The
             model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
           </p>
 
           
-          <img src="./static/images/fig_model_v3.jpg"
+          <img src="./static/images/model_architecture.svg"
           class="interpolation-image"
-          alt="Interpolate start reference image."/>
+          alt="Model Architecture"/>
           
         </div>
 
@@ -280,11 +286,7 @@
   <div class="container is-max-desktop">
       <!-- Results for FWD model  -->
       <div class="content">
-        <h2 class="title is-3">Forward Model</h2>
-        <p>
-          The forward model problem involves predicting the tree’s future state, based on its initial state and the actions performed by the end-effector.
-        </p>
-
+        <h2 class="title is-3">Forward Model Predictions</h2>
           <div class="columns">
             <div class="column">
               <div class="dataset">
@@ -293,8 +295,8 @@
                 </video>
                 
               </div>
-              <p>
-                Initial tree (brown), contact node and trajectory (pink), predicted tree deformation (red), ground-truth tree deformation (green).
+              <p class="subtitle has-text-centered">
+                <span class="dnerf">Initial tree (brown), contact node and trajectory (pink), predicted tree deformation (red), ground-truth tree deformation (green).
               </p>
               
             </div>
@@ -303,8 +305,8 @@
                 <video poster="" id="contact-policy" autoplay controls muted loop playsinline height="100%">
                   <source src="./static/videos/multi_tree.mp4" type="video/mp4">
                 </video>
-                <p>
-                  The forward model shown on varying tree structures and sizes. The forward model can generalize zero-shot to unseen tree sizes outside the training set.
+                <p class="subtitle has-text-centered">
+                  <span class="dnerf">The forward model shown on varying tree structures and sizes. The forward model can generalize zero-shot to unseen tree sizes outside the training set.
                 </p>
                 
               </div>
@@ -322,10 +324,7 @@
   <div class="container is-max-desktop">
       <!-- Results for FWD model  -->
       <div class="content">
-        <h2 class="title is-3">Contact Policy</h2>
-        <p>
-          Given an initial state and target state of a tree, the contact policy outputs a set of candidate actions represented as pernode trajectories and affordance scores.
-        </p>
+        <h2 class="title is-3">Contact Policy Inferences</h2>
 
           <div class="columns">
             <div class="column">
@@ -335,19 +334,17 @@
                 </video>
                 
               </div>
-              <p>
-                Initial tree state (brown) and the desired target tree state (green). 
-                Given a set of candidate actions, we check feasibility and select the best action by iteratively applying RRT* to each candiate.  
-              </p>
-              
+              <p class="subtitle has-text-centered">
+                <span class="dnerf"> Initial tree state (brown) and the desired target tree state (green). Given a set of candidate actions, we check feasibility and select the best action by iteratively applying RRT* to each candiate.  
+              </p>              
             </div>
             <div class="column">
               <div class="contact-policy">
                 <video poster="" id="contact-policy" autoplay controls muted loop playsinline height="100%">
                   <source src="./static/videos/robot_policy_multi.mp4" type="video/mp4">
                 </video>
-                <p>
-                  The contact policy used to manipulate the tree to a desired target state. The contact policy is shown on varying tree structures and sizes. 
+                <p class="subtitle has-text-centered">
+                  <span class="dnerf"> The contact policy used to manipulate the tree to a desired target state. The contact policy is shown on varying tree structures and sizes. 
                 </p>
                 
               </div>
