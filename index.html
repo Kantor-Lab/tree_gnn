@@ -132,48 +132,33 @@
 <section class="hero teaser"> 
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/titile_motivation.jpg"
-         class="interpolation-image"
-         alt="Interpolate start reference image."/>
-
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf"> Agricultural tasks such as harvesting, pruning, and inspection, often involve contact interactions with crops. 
-      </h2>
-    </div>
-  </div>
-</section> 
-
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-          <div class="dataset">
-            <video poster="" id="dataset" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/trimmed_dataset.mp4" type="video/mp4">
-            </video>
-            <h2 class="subtitle has-text-centered">
-              <span class="dnerf"> Dataset collection process of tree deformation in Issac Gym. 
-            </h2>
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <div class="contact-policy">
+              <video poster="" id="contact-policy" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/trimmed_contact.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                <span class="dnerf"> Robot executing a learnt contact policy to manipulate trees to the target state. 
+              </h2>
+            </div>
           </div>
-        </div>
-        <div class="column">
-          <div class="contact-policy">
-            <video poster="" id="contact-policy" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/trimmed_contact.mp4" type="video/mp4">
-            </video>
-            <h2 class="subtitle has-text-centered">
-              <span class="dnerf"> Robot executing a learnt contact policy to manipulate trees to the target state. 
-            </h2>
+          <div class="column">
+            <div class="dataset">
+              <video poster="" id="dataset" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/trimmed_dataset.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                <span class="dnerf"> Dataset collection process of tree deformation in Issac Gym. 
+              </h2>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
-
+</section> 
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -189,25 +174,26 @@
             specialty crops, such as trees and vines. However, developing
             robotic solutions for crop manipulation remains a difficult
             challenge due to complexities involved in modeling their deformable
-            behavior. 
-
-            
-          </p>
-          <p>
-            In this study, we present a framework for
+            behavior. In this study, we present a framework for
             learning the deformation behavior of tree-like crops under
             contact interaction. Our proposed method involves encoding the
             state of a spring-damper modeled tree crop as a graph. This
             representation allows us to employ graph networks to learn both
             a forward model for predicting resulting deformations, and a
             contact policy for inferring actions to manipulate tree crops.
-          </p>
-          <p>
             We conduct a comprehensive set of experiments in a simulated
             environment and demonstrate generalizability of our method
             on previously unseen trees.
           </p>
         </div>
+        <img src="./static/images/titile_motivation.jpg"
+        class="interpolation-image"
+        alt="Interpolate start reference image."/>
+    
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf"> Agricultural tasks such as harvesting, pruning, and inspection, often involve contact interactions with crops. 
+        </h2>
+    
       </div>
     </div>
     <!--/ Abstract. -->
@@ -260,7 +246,7 @@
           <h2 class="title is-3">Graph Neural Network Architecture</h2>
           <p>
             Our GNN model architecture utilizes stackable <a href="https://arxiv.org/abs/1806.01242">graph2graph</a> layers, placed between input embedding layers and output prediction heads. The
-            model takes as input a graph Gin and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+            model takes as input a graph and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
           </p>
 
           
